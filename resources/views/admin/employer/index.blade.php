@@ -18,6 +18,8 @@
             <th>id</th>
             <th>Bedrijfsnaam</th>
             <th>Vacatures</th>
+            <th>aanmelding</th>
+            <th>laatste wijziging</th>
             <th class="no-sort"></th>
         @endslot
         @slot('table')
@@ -26,6 +28,8 @@
                     <td>{!! $employer->id !!}</td>
                     <td>{!! $employer->bedrijfsnaam !!}</td>
                     <td>{!! $employer->jobs->count() !!}</td>
+                    <td>{!! $employer->created_at !!}</td>
+                    <td>{!! $employer->updated_at !!}</td>
                     <td>
                         @component('admin.components.model', [
                            'id' => 'userTableBtn'.$employer->id,

@@ -19,6 +19,8 @@
             <th>Naam</th>
             <th>voorgedragen</th>
             <th>status</th>
+            <th>aanmelding</th>
+            <th>laatste wijziging</th>
             <th class="no-sort"></th>
         @endslot
         @slot('table')
@@ -28,6 +30,8 @@
                     <td>{!! $candidate->voornaam !!} {!! $candidate->achternaam !!}</td>
                     <td></td>
                     <td></td>
+                    <td>{!! $candidate->created_at !!}</td>
+                    <td>{!! $candidate->updated_at !!}</td>
                     <td>
                         @component('admin.components.model', [
                            'id' => 'userTableBtn'.$candidate->id,

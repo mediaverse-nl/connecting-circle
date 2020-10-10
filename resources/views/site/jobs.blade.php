@@ -2,6 +2,8 @@
     $jobs = $vacatures;
     $vakgebieden = $vacaturesBase->pluck('specialty_id', 'specialty.naam')->toArray();
     $regios = $vacaturesBase->pluck('plaats', 'plaats')->toArray();
+    ksort($vakgebieden);
+    ksort($regios);
 ?>
 
 @extends('site.layouts.app')
@@ -31,6 +33,8 @@
                         <br>
                         <small>geen vakgebieden gevonden</small>
                     @endif
+{{--                    {!! dd(ksort($vakgebieden)) !!}--}}
+{{--                collect(\App\Jobs::with(['specialty'])->groupBy('specialty_id')->get())->sortBy('specialty.naam')--}}
                     @foreach($vakgebieden as $value => $vakgebied)
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" class="custom-control-input" id="vakgebied{!! $vakgebied !!}" name="vakgebied[]" value="{!! $vakgebied !!}"

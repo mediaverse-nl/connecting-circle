@@ -78,7 +78,7 @@
                 <h6 class="text-uppercase font-weight-bold">Vacatures</h6>
                 <hr class="deep-orange accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
 
-                @foreach(\App\Jobs::groupBy('specialty_id')->get() as $i)
+                @foreach(collect(\App\Jobs::with(['specialty'])->groupBy('specialty_id')->get())->sortBy('specialty.naam') as $i)
                     <p>
                         <a href="{!! route('site.jobs.index') !!}?vakgebied[]={!! $i->specialty_id !!}">{!! $i->specialty->naam !!}</a>
                     </p>

@@ -21,7 +21,7 @@
                                     <label for="">Welk vakgebied zoek je?</label>
                                     <select name="vakgebied[]" class="form-control browser-default custom-select rounded-pill text-center" style="text-align-last: center; height: 45px !important;">
                                         <option disabled selected>vakgebied</option>
-                                        @foreach(App\Specialty::pluck('naam', 'id') as $k => $v)
+                                        @foreach(App\Specialty::orderBy('naam')->pluck('naam', 'id') as $k => $v)
                                             <option value="{!! $k !!}">{!! $v !!}</option>
                                         @endforeach
                                     </select>
@@ -30,7 +30,7 @@
                                     <label class="" for="">In welke regio zoek je?</label>
                                     <select name="regio[]" class="form-control browser-default custom-select rounded-pill text-center" style="text-align-last: center; height: 45px !important;">
                                         <option disabled selected>Regio</option>
-                                        @foreach(App\Jobs::pluck('plaats', 'plaats') as $k => $v)
+                                        @foreach(App\Jobs::orderBy('plaats')->pluck('plaats', 'plaats') as $k => $v)
                                             <option value="{!! $k !!}">{!! $v !!}</option>
                                         @endforeach
                                     </select>
