@@ -30,11 +30,11 @@ class ContactController extends Controller
 
     public function store(ContactStoreRequest $request)
     {
-//        Mail::to($request->email)
-//            ->send(new ContactRequest($request->except(['_token', 'g-recaptcha-response'])));
-//
-//        Mail::to(env('MAIL_ADMIN'))
-//            ->send(new AdminContactRequest($request->except(['_token', 'g-recaptcha-response'])));
+        Mail::to($request->email)
+            ->send(new ContactRequest($request->except(['_token', 'g-recaptcha-response'])));
+
+        Mail::to('recruitment@connectingcircle.nl')
+            ->send(new ContactRequest($request->except(['_token', 'g-recaptcha-response'])));
 
         session()->flash('successModel', 'success');
 

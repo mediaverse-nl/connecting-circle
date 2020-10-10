@@ -140,13 +140,13 @@
           <div class="row mt-3">
               <div class="col-md-4 mx-auto my-1 text-md-left">
                   @if(getSetting('algemene_voorwaarden'))
-                      <a href="{{getSetting('algemene_voorwaarden')}}"> Algemene voorwaarden</a> -
+                      <a target="_blank" href="{{getSetting('algemene_voorwaarden')}}"> Algemene voorwaarden</a> -
                   @endif
                   @if(getSetting('privacy_statement'))
-                      <a href="{{getSetting('privacy_statement')}}"> Privacy</a> -
+                      <a target="_blank" href="{{getSetting('privacy_statement')}}"> Privacy</a> -
                   @endif
                   @if(getSetting('cookie_beleid'))
-                    <a href="{{getSetting('cookie_beleid')}}"> Cookie beleid</a>
+                    <a target="_blank" href="{{getSetting('cookie_beleid')}}"> Cookie beleid</a>
                   @endif
               </div>
               <div class="col-md-4 mx-auto my-1 text-md-center text-muted">
