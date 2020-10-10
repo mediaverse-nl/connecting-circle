@@ -140,6 +140,9 @@
             </div>
             <div class="col-md-6">
                 @include('admin.components.notices', ['model' => $employer])
+
+                <iframe src="{!! route('unisharp.lfm.show') !!}?defaultPath=/shares/employer/{!! $employer->id !!}" style="width: 100%; height: 80vh; overflow: hidden; border: none;"></iframe>
+
             </div>
 
             {{--            <div class="col-md-6">--}}
