@@ -53,7 +53,7 @@
                     <!-- Terms of service -->
                     <p>
                         Bij <em>versturen</em> gaat u akkoord met onze <a href="{{getSetting('algemene_voorwaarden')}}" target="_blank">algemene voorwaarden</a> en
-                        <a href="{{getSetting('privacy_statement')}}">privacy statement</a>
+                        <a target="_blank"  href="{{getSetting('privacy_statement')}}" >privacy statement</a>
                     </p>
                 {!! Form::open()!!}
 
