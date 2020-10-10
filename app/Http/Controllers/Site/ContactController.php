@@ -34,7 +34,7 @@ class ContactController extends Controller
             ->send(new ContactRequest($request->except(['_token', 'g-recaptcha-response'])));
 
         Mail::to('recruitment@connectingcircle.nl')
-            ->send(new ContactRequest($request->except(['_token', 'g-recaptcha-response'])));
+            ->send(new AdminContactRequest($request->except(['_token', 'g-recaptcha-response'])));
 
         session()->flash('successModel', 'success');
 

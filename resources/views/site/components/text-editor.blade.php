@@ -1,27 +1,30 @@
 <?php
-    $randomStr = Str::random(8);
-    $model = new App\Text;
-    $text = $model->where('key_name', $key)->exists()
-        ? $model->where('key_name', $key)->first()->text
-        : '<h2 class="orange-text">Why do we use it? (title <small>h2</small>)</h2>
+$randomStr = Str::random(8);
+$model = new App\Text;
+$text = $model->where('key_name', $key)->exists()
+    ? $model->where('key_name', $key)->first()->text
+    : '<h2 class="orange-text">Why do we use it? (title <small>h2</small>)</h2>
             <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &#39;Content here, content here&#39;, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for &#39;lorem ipsum&#39; will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>';
 
-    $localVars = $mentions ?? [];
+$localVars = $mentions ?? [];
 
-    $settings = \App\Settings::where('field_value', '!=', null);
+$settings = \App\Settings::where('field_value', '!=', null);
 
-    $globalVars = [];
-    foreach ($settings->get() as $item){
-        $globalVars[] = [
-            'key' => $item->setting,
-            'value' => $item->field_value,
-        ];
-    }
+$globalVars = [];
+foreach ($settings->get() as $item){
+    $globalVars[] = [
+        'key' => $item->setting,
+        'value' => $item->field_value,
+    ];
+}
 
-    $readableText = $text;
-    foreach ($globalVars as $k => $v){
-        $readableText = str_replace('@'.$v['key'], $v['value'], $readableText);
-    }
+$readableText = $text;
+foreach ($globalVars as $k => $v){
+    $readableText = str_replace('@'.$v['key'], $v['value'], $readableText);
+}
+foreach ($localVars as $k => $v){
+    $readableText = str_replace('#'.$k, $v, $readableText);
+}
 ?>
 
 @if(auth()->check())
