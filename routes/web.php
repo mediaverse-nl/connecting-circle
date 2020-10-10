@@ -46,6 +46,7 @@ Route::get('/clear-test', function () {
 //    phpinfo();
     Artisan::call('route:clear');
     Artisan::call('config:clear');
+    return 'fin...';
 });
 
 Route::namespace('Site')->name('site.')->group(function () {
