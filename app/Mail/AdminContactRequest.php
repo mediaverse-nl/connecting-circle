@@ -30,7 +30,7 @@ class AdminContactRequest extends Mailable
      */
     public function build()
     {
-        return $this->from($this->request->email, 'Connectingcircle - Contactformulier')
+        return $this->from($this->request['email'], 'Connectingcircle - Contactformulier')
             ->subject('Contactformulier')
             ->view('emails.contact');
     }
