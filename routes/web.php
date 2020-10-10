@@ -42,6 +42,12 @@ Route::get('/test-storage-link', function () {
     Artisan::call('storage:link');
 });
 
+Route::get('/clear-test', function () {
+//    phpinfo();
+    Artisan::call('route:clear');
+    Artisan::call('config:clear');
+});
+
 Route::namespace('Site')->name('site.')->group(function () {
     Route::get('/site-map', 'SiteMapController');
 
