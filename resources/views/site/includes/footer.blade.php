@@ -149,7 +149,7 @@
                     <a href="{{getSetting('cookie_beleid')}}"> Cookie beleid</a>
                   @endif
               </div>
-              <div class="col-md-4 mx-auto my-1 text-md-center">
+              <div class="col-md-4 mx-auto my-1 text-md-center text-muted">
                   Made By <a href="https://web-assembled.nl">web-assembled.nl</a>
               </div>
               <div class="col-md-4 mx-auto my-1 text-md-right">
