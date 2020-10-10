@@ -57,8 +57,8 @@ return [
         'image/vnd.microsoft.icon',
         'image/x-icon',
         'application/vnd.ms-excel',
-        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-        'application/docx'
+        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
     ],
 
     'folder_categories'        => [
@@ -71,9 +71,15 @@ return [
                 'image/pjpeg',
                 'image/png',
                 'image/gif',
-                'application/pdf',
-                'application/msword	',
                 'image/svg+xml',
+                'application/pdf',
+                'application/docx',
+                'text/plain',
+                'image/vnd.microsoft.icon',
+                'image/x-icon',
+                'application/vnd.ms-excel',
+                'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
             ],
         ],
         'image' => [
