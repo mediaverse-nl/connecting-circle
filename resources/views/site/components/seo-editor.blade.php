@@ -536,8 +536,10 @@
 @endif
 
 @push('css')
-    <link rel="stylesheet" href="{{'/css/editor/global.css'}}">
-    @if($page !== null)
+    @if (file_exists('/css/editor/global.css'))
+        <link rel="stylesheet" href="{{'/css/editor/global.css'}}">
+    @endif
+    @if($page !== null && file_exists('/css/editor/'.($page->id ?? null).'.css'))
         <link rel="stylesheet" href="{{'/css/editor/'.($page->id ?? null).'.css'}}">
     @endif
 @endpush

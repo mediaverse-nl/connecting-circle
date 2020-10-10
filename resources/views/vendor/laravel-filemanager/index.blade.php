@@ -196,7 +196,7 @@
   <script src="{{ asset('vendor/laravel-filemanager/js/dropzone.min.js') }}"></script>
   <script>
 
-      var lang = {!! json_encode(trans('laravel-filemanager::lfm')) !!};
+    var lang = {!! json_encode(trans('laravel-filemanager::lfm')) !!};
     var actions = [
       // {
       //   name: 'use',
@@ -292,10 +292,41 @@
   <script>
       const urlParams = new URLSearchParams(window.location.search);
       const myParam = urlParams.get('defaultPath');
+      // const currentDir = $("#working_dir").val();
 
-      console.log(myParam)
+      // console.log(myParam, currentDir)
 
       goTo(myParam);
+
+      // if (!myParam == '' && myParam !== currentDir){
+      //     $("#to-previous").attr("style", "display: none !important");
+      //     console.log('hide')
+      // }
+      //
+      // $("#working_dir").change(function (){
+      //     console.log('ttttttttttttttttttttttttttttttttttttttttt')
+      // })
+      //
+      // $("#content, #nav").click(function() {
+      //     console.log('---- on click ---- ',myParam, $("#working_dir").val())
+      //     console.log('myParam', myParam)
+      //     console.log('val',  $("#working_dir").val())
+      //     console.log(myParam.toString() == $("#working_dir").val().toString())
+      //     console.log(myParam !== '')
+      //     console.log('---- on click ---- ')
+      //
+      //     if (myParam !== '' && myParam !== $("#working_dir").val()){
+      //         $("#to-previous").attr("style", "display: none !important");
+      //         console.log('hide')
+      //     }else {
+      //         $("#to-previous").show()
+      //         console.log('show')
+      //     }
+      //     // result.val();
+      //     console.log('test test test')
+      // })
+
+
   </script>
 </body>
 </html>
