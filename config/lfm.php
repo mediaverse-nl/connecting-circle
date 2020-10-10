@@ -72,7 +72,12 @@ return [
                 'image/gif',
                 'image/svg+xml',
                 'application/pdf',
-                'text/plain'
+                'text/plain',
+                'image/vnd.microsoft.icon',
+                'image/x-icon',
+                'application/vnd.ms-excel',
+                'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
             ],
         ],
         'image' => [
