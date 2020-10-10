@@ -5,9 +5,13 @@ namespace App\Http\Controllers\Site;
 use App\Candidate;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CandidateStoreRequest;
+use App\Mail\AdminCandidateRequest;
+use App\Mail\CandidateRequest;
+use App\Mail\ContactRequest;
 use App\Traits\SeoTags;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class CandidatesController extends Controller
 {
@@ -60,6 +64,11 @@ class CandidatesController extends Controller
         session()->flash('successModel', 'success');
 
         //todo send mail with referentienummer
+        Mail::to($request->email)
+            ->send(new CandidateRequest($request->except(['_token', 'g-recaptcha-response'])));
+
+        Mail::to('recruitment@connectingcircle.nl')
+            ->send(new AdminCandidateRequest($request->except(['_token', 'g-recaptcha-response'])));
 
         return redirect()->back();
     }

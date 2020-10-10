@@ -11,14 +11,16 @@ class ContactRequest extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $request;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($request)
     {
-        //
+        $this->request = $request;
     }
 
     /**
@@ -28,6 +30,8 @@ class ContactRequest extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->from('connecting-circle@web-assembled.nl', 'Connectingcircle - Contactformulier')
+            ->subject('contactformulier')
+            ->view('emails.contact');
     }
 }

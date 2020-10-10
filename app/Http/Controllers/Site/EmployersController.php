@@ -6,8 +6,11 @@ use App\Employer;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\EmployerStoreRequest;
 use App\Http\Requests\Site\ContactStoreRequest;
+use App\Mail\AdminEmployerRequest;
+use App\Mail\EmployerRequest;
 use App\Traits\SeoTags;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class EmployersController extends Controller
 {
@@ -41,11 +44,11 @@ class EmployersController extends Controller
 
         $employer->save();
 
-//        Mail::to($request->email)
-//            ->send(new ContactRequest($request->except(['_token', 'g-recaptcha-response'])));
-//
-//        Mail::to(env('MAIL_ADMIN'))
-//            ->send(new AdminContactRequest($request->except(['_token', 'g-recaptcha-response'])));
+        Mail::to($request->email)
+            ->send(new EmployerRequest($request->except(['_token', 'g-recaptcha-response'])));
+
+        Mail::to('recruitment@connectingcircle.nl')
+            ->send(new AdminEmployerRequest($request->except(['_token', 'g-recaptcha-response'])));
 
         session()->flash('successModel', 'success');
 
