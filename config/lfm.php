@@ -45,6 +45,22 @@ return [
     |--------------------------------------------------------------------------
      */
 
+    'valid_file_mimetypes' => [
+        'image/jpeg',
+        'image/pjpeg',
+        'image/png',
+        'image/gif',
+        'image/svg+xml',
+        'application/pdf',
+        'application/docx',
+        'text/plain',
+        'image/vnd.microsoft.icon',
+        'image/x-icon',
+        'application/vnd.ms-excel',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        'application/docx'
+    ],
+
     'folder_categories'        => [
         'file'  => [
             'folder_name'  => 'files',
