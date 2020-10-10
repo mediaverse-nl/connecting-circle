@@ -30,7 +30,7 @@ class AdminCandidateRequest extends Mailable
      */
     public function build()
     {
-        return $this->from($this->request->email, 'Connectingcircle - Aanmeldformulier')
+        return $this->from($this->request['email'], 'Connectingcircle - Aanmeldformulier')
             ->subject('Aanmeldformulier kandidaat')
             ->view('emails.candidate');
     }
