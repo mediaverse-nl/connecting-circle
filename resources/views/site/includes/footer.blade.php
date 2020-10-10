@@ -150,7 +150,7 @@
                   @endif
               </div>
               <div class="col-md-4 mx-auto my-1 text-md-center text-muted">
-                  Made By <a href="https://web-assembled.nl">web-assembled.nl</a>
+                  Made By <a class="text-muted" href="https://web-assembled.nl">web-assembled.nl</a>
               </div>
               <div class="col-md-4 mx-auto my-1 text-md-right">
                    © {!! date('Y') !!} Copyright: <a>{{str_replace('https://', '', url('/'))}}</a>
