@@ -52,12 +52,11 @@ return [
         'image/gif',
         'image/svg+xml',
         'application/pdf',
+        'application/docx',
         'text/plain',
         'image/vnd.microsoft.icon',
         'image/x-icon',
-        'application/vnd.ms-excel',
-        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-        'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+        'application/vnd.ms-excel','application/vnd.openxmlformats-officedocument.wordprocessingml.document'
     ],
 
     'folder_categories'        => [
@@ -72,12 +71,11 @@ return [
                 'image/gif',
                 'image/svg+xml',
                 'application/pdf',
+                'application/docx',
                 'text/plain',
                 'image/vnd.microsoft.icon',
                 'image/x-icon',
-                'application/vnd.ms-excel',
-                'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-                'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+                'application/vnd.ms-excel','application/vnd.openxmlformats-officedocument.wordprocessingml.document'
             ],
         ],
         'image' => [
