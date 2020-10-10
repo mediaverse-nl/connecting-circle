@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class ContactRequest extends Mailable
+class AdminCandidateRequest extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -30,8 +30,8 @@ class ContactRequest extends Mailable
      */
     public function build()
     {
-        return $this->from('info@connectingcircle.nl', 'Connectingcircle - Contactformulier')
-            ->subject('contactformulier')
-            ->view('emails.contact');
+        return $this->from($this->request->email, 'Connectingcircle - Aanmeldformulier')
+            ->subject('Aanmeldformulier kandidaat')
+            ->view('emails.candidate');
     }
 }
