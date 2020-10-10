@@ -55,6 +55,8 @@ return [
                 'image/pjpeg',
                 'image/png',
                 'image/gif',
+                'application/pdf',
+                'application/msword	',
                 'image/svg+xml',
             ],
         ],

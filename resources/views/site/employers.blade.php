@@ -15,7 +15,7 @@
                 {!! Form::open(['route' => ['site.employers.store'], 'method' => 'POST', 'id' => 'contactform', 'class' => 'order border-orange p-3 mt-4 mb-4']) !!}
                     <p class="h4 text-center">Contactformulier voor werkgevers</p>
                     <p class="text-center orange-text mb-4">Op zoek naar professionals? Vul hier de gevraagde gegevens in en wij nemen uiterlijk binnen 1 werkdag contact met je op</p>
-                <div class="form-row ">
+                    <div class="form-row ">
                         <div class="col-md-6 col-sm-6 mb-4">
                             {!! Form::text('voornaam', null, ['placeholder' => 'Voornaam', 'class' => 'form-control'.(!$errors->has('voornaam') ? '': ' is-invalid ')]) !!}
                             @include('components.error', ['field' => 'voornaam'])
