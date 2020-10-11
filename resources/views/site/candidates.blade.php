@@ -82,7 +82,7 @@
                     <p class="h5 orange-text"><i class="fas fa-fw pr-2 fa-upload"></i> Bijlagen uploaden</p>
                     <hr>
                     <div class="form-row ">
-                        <div class="col-md-3 col-sm-6 mb-4">
+                        <div class="col-md-6 col-sm-6 mb-4">
                             <label for="">Upload motivatiebrief * (max 3mb)</label>
                             <div class="input-group">
                                 <div class="custom-file">
@@ -92,7 +92,7 @@
                             </div>
                             @include('components.error', ['field' => 'upload_motivatiebrief'])
                         </div>
-                        <div class="col-md-3 col-sm-6 mb-4">
+                        <div class="col-md-6 col-sm-6 mb-4">
                             <label for="">Upload CV * (max 3mb)</label>
                             <div class="input-group">
                                 <div class="custom-file">

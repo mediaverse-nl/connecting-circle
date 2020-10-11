@@ -127,7 +127,6 @@
                                                                     'telefoonnummer_prive',
                                                                     'telefoonnummer',
                                                                     'geboortedatum',
-                                                                    'opmerking',
                                                                     'referentienummer',
                                                                 ]
                                                             ])
@@ -158,9 +157,9 @@
                                                                     'achternaam',
                                                                     'email',
                                                                     'telefoonnummer',
-                                                                    'opmerking',
+                                                                    'bericht',
                                                                     'bedrijfsnaam',
-                                                                    'kvknummer'
+                                                                    'kvk_nummer'
                                                                 ]
                                                             ])
                                                         </div>
@@ -189,7 +188,7 @@
                                                                     'achternaam',
                                                                     'email',
                                                                     'telefoonnummer',
-                                                                    'opmerking',
+                                                                    'bericht',
                                                                 ]
                                                             ])
                                                         </div>
