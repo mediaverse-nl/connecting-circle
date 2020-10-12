@@ -201,6 +201,175 @@
                             </div>
                         </div>
                     </div>
+                    <div class="tab-pane fade" id="seo" role="tabpanel" aria-labelledby="seo-tab">
+                        {!! Form::model($page, ['url' => '/api/seo-editor', 'method' => 'POST', 'files' => true]) !!}
+                        <div class="container-fluid" style="">
+                            <div class="container py-4">
+                                <h1>Search Engine Optimization <small>(seo)</small></h1>
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link sub-tabs active" id="global-tab" data-toggle="tab" href="#global" role="tab" aria-controls="global"
+                                           aria-selected="false">Google</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link sub-tabs" id="twitter-tab" data-toggle="tab" href="#twitter" role="tab" aria-controls="twitter"
+                                           aria-selected="false">Twitter card</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link sub-tabs" id="OpenGraph-tab" data-toggle="tab" href="#OpenGraph" role="tab" aria-controls="OpenGraph"
+                                           aria-selected="false">OpenGraph</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content card py-2" id="myTabContent" style="border-top-left-radius: 0px !important; border-top-right-radius: 0px !important;">
+                                    <div class="tab-pane fade show active" id="global" role="tabpanel" aria-labelledby="global-tab">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <label for="" class="">meta titel</label>
+                                                    {!! Form::text('meta_titel', null, ['class' => 'form-control']) !!}
+                                                    <label for="" class="">meta beschrijving</label>
+                                                    {!! Form::textarea('meta_beschrijving', null, ['class' => 'form-control', 'rows="3"']) !!}
+                                                    <div class="custom-control custom-checkbox pt-3">
+                                                        {!! Form::checkbox('noindex', 'noindex', null, ['id' => 'noindex', 'class' => 'custom-control-input']) !!}
+                                                        {!! Form::label('noindex', null, ['class' => 'custom-control-label']) !!}
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox">
+                                                        {!! Form::checkbox('nofollow', 'nofollow', null, ['id' => 'nofollow', 'class' => 'custom-control-input']) !!}
+                                                        {!! Form::label('nofollow', null, ['class' => 'custom-control-label']) !!}
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <h3>preview</h3>
+                                                    <div class="card mt-2">
+                                                        <div class="card-body">
+                                                            <span style="color:#202124;">{{url('/').str_replace('/', ' › ', $slug)}}</span>
+                                                            <h4 style="color: #1a0dab;">
+                                                                {!! isset($page->meta_titel) ? $page->meta_titel : 'This is how the Page Title appears in search results' !!}
+                                                            </h4>
+                                                            <p style="color: #4d5156"><span style="color: #70757a;font-size: 14px;line-height: 1.57;">{{isset($page->updated_at) ? $page->updated_at->format('M d, Y') : "Aug 05, 2020"}}</span> - {!! isset($page->meta_beschrijving) ? $page->meta_beschrijving : "This is the page description. Despite the meta description element's content, the text here depends on the search query and is rarely longer than 160 .." !!}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="twitter" role="tabpanel" aria-labelledby="twitter-tab">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-4 pb-2">
+                                                    <label for="" class="">meta titel twitter</label>
+                                                    {!! Form::text('meta_titel_twitter', null, ['class' => 'form-control']) !!}
+                                                    <label for="" class="">meta beschrijving twitter</label>
+                                                    {!! Form::textarea('meta_beschrijving_twitter', null, ['class' => 'form-control', 'rows="3"']) !!}
+                                                    <label for="" class="">Thumbnail</label>
+                                                    <div class="input-group">
+                                                        <div class="custom-file">
+                                                            {!! Form::file('meta_image_twitter', ['class' => 'custom-file-input', 'accept="image/png, image/jpeg"']) !!}
+                                                            {!! Form::label('meta_image_twitter', 'kies bestand', ['class' => 'custom-file-label', 'style="padding: .375rem .75rem;"']) !!}
+                                                            @include('components.error', ['field' => 'meta_image_twitter'])
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {{--                                            {!! dd($page) !!}--}}
+                                                <div class="col-md-8 pb-2">
+                                                    <?php
+                                                    $twitterDefaultImage = isset($page->meta_image_twitter)
+                                                        ? $page->meta_image_twitter
+                                                        : '//placehold.it/150';
+
+                                                    if (isset($page->meta_image_twitter)){
+                                                        list($widthTwitterImage) = getimagesize($page->meta_image_twitter);
+                                                    }else{
+                                                        list($widthTwitterImage) = getimagesize('http://placehold.it/150');
+                                                    }
+                                                    ?>
+                                                    <h3>preview</h3>
+                                                    <div class="card">
+                                                        <div class="row no-gutters">
+                                                            <div class="{{$widthTwitterImage > 1200 ? 'col-12' : 'col-3'}}">
+                                                                <img src="{!! $twitterDefaultImage !!}" class="" style="{{$widthTwitterImage > 1200 ? 'height:250px !important;' : 'height:150px;'}} object-fit: cover; width: 100% !important;" alt="">
+                                                            </div>
+                                                            <div class="{{$widthTwitterImage > 1200 ? 'col-12' : 'col-9'}}">
+                                                                <div class="card-block p-3">
+                                                                    <div class="mx-auto">
+                                                                        <h5 class="p-0 m-0" style="font-size: 15px; color: rgb(20, 23, 26);">
+                                                                            {!! isset($page->meta_titel_twitter) ? $page->meta_titel_twitter : 'This is how the Page Title appears in search results' !!}
+                                                                        </h5>
+                                                                        <p class="m-0" style="font-size: 15px; padding-bottom: 0px !important; color: rgb(101, 119, 134)">
+                                                                            {!! isset($page->meta_beschrijving_twitter) ? $page->meta_beschrijving_twitter : "This is the page description. Despite the meta description element's content, the text here depends on the search query and is rarely longer than 160 .." !!}
+                                                                        </p>
+                                                                        <p class="m-0" style="font-size: 15px; padding-bottom: 0px !important; color: rgb(101, 119, 134)">{{url('/').$slug}}</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="OpenGraph" role="tabpanel" aria-labelledby="OpenGraph-tab">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-4 pb-2">
+                                                    <label for="" class="">meta titel twitter</label>
+                                                    {!! Form::text('meta_titel_open_graph', null, ['class' => 'form-control']) !!}
+                                                    <label for="" class="">meta beschrijving twitter</label>
+                                                    {!! Form::textarea('meta_beschrijving_open_graph', null, ['class' => 'form-control', 'rows="3"']) !!}
+                                                    <label for="" class="">Thumbnail</label>
+                                                    <div class="input-group">
+                                                        <div class="custom-file">
+                                                            {!! Form::file('meta_image_open_graph', ['class' => 'custom-file-input', 'accept="image/png, image/jpeg"']) !!}
+                                                            {!! Form::label('meta_image_open_graph', 'kies bestand', ['class' => 'custom-file-label', 'style="padding: .375rem .75rem;"']) !!}
+                                                        </div>
+                                                    </div>
+                                                    @include('components.error', ['field' => 'meta_image_open_graph'])
+                                                </div>
+                                                <div class="col-md-8 pb-2">
+                                                    <?php
+                                                    $twitterDefaultImage = isset($page->meta_image_open_graph)
+                                                        ? $page->meta_image_open_graph
+                                                        : '//placehold.it/150';
+
+                                                    if (isset($page->meta_image_open_graph)){
+                                                        list($widthOgImage) = getimagesize($page->meta_image_open_graph);
+                                                    }else{
+                                                        list($widthOgImage) = getimagesize('http://placehold.it/150');
+                                                    }
+                                                    ?>
+                                                    <h3>preview</h3>
+                                                    <div class="card shadow-sm border" style="border-radius: 0px;">
+                                                        <div class="row no-gutters">
+                                                            <div class="{{$widthOgImage > 1200 ? 'col-12' : 'col-3 col-auto'}}">
+                                                                <img src="{{$twitterDefaultImage}}" class="" style="{{$widthOgImage > 1200 ? 'height:250px !important;' : 'height:150px;'}} object-fit: cover; width: 100% !important;" alt="">
+                                                            </div>
+                                                            <div class="{{$widthOgImage > 1200 ? 'col-12' : 'col-9'}}">
+                                                                <div class="card-block p-3">
+                                                                    <div class="mx-auto">
+                                                                        <h5 class="p-0 m-0" style="color: #1a0dab; font-size: 16px; ">
+                                                                            {!! isset($page->meta_titel_twitter) ? $page->meta_titel_twitter : 'This is how the Page Title appears in search results' !!}
+                                                                        </h5>
+                                                                        <p class="m-0 mb-2" style="font-size: 15px; padding-bottom: 0px !important; color: rgb(101, 119, 134)">{{ url('/').$slug }}</p>
+                                                                        <p class="m-0" style="font-size: 15px; padding-bottom: 0px !important; color: rgb(101, 119, 134)">
+                                                                            {!! isset($page->meta_beschrijving_twitter) ? $page->meta_beschrijving_twitter : "This is the page description. Despite the meta description element's content, the text here depends on the search query and is rarely longer than 160 .." !!}
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-blue m-0 mt-2">
+                                    opslaan
+                                </button>
+                            </div>
+                        </div>
+                        {!! Form::close() !!}
+                    </div>
                     <div class="tab-pane fade" id="site" role="tabpanel" aria-labelledby="site-tab">
                         <?php
                             $settings = new \App\Settings();
