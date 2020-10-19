@@ -6,14 +6,14 @@ use App\Page;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use Spatie\Sitemap\Sitemap;
+use Spatie\Sitemap\SitemapGenerator;
 use Spatie\Sitemap\Tags\Url;
 
 class SiteMapController extends Controller
 {
     public function __invoke()
     {
-        $sitemap = Sitemap::create()
+        $sitemap = SitemapGenerator::create()
             ->getSitemap();
 
         $pages = Page::select(['slug', 'updated_at'])->get();
