@@ -22,18 +22,17 @@ class SiteMapController extends Controller
                 ->setLastModificationDate($page->updated_at));
         }
 
-            $sitemap->hasCrawled(function (Url $url) use ($pages) {
-                // All pages will be crawled, except the contact page.
-                // Links present on the contact page won't be added to the
-                // sitemap unless they are present on a crawlable page.
-
-                foreach ($pages as $page) {
-                    if ($url->segment(1) === $page->slug) {
-                        return;
-                    }
-                }
-                return $url;
-            });
+//        $sitemap->hasCrawled(function (Url $url) use ($pages) {
+//            // All pages will be crawled, except the contact page.
+//            // Links present on the contact page won't be added to the
+//            // sitemap unless they are present on a crawlable page.
+//            foreach ($pages as $page) {
+//                if ($url->segment(1) === $page->slug) {
+//                    return;
+//                }
+//            }
+//            return $url;
+//        });
 
 //        ->hasCrawled(function (Url $url) {
 //        # Ignore if URL is not canonical
