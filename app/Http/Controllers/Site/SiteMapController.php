@@ -18,7 +18,7 @@ class SiteMapController extends Controller
         $pages = Page::select(['slug', 'updated_at'])->get();
 
         foreach ($pages as $page) {
-            $sitemap->add(Url::create('' . $page->slug)
+            $sitemap->add(Url::create('/test/' . $page->slug)
                 ->setLastModificationDate($page->updated_at));
         }
 
