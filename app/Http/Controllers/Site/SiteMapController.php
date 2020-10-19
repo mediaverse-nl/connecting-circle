@@ -13,7 +13,8 @@ class SiteMapController extends Controller
 {
     public function __invoke()
     {
-        $sitemap = Sitemap::create();
+        $sitemap = Sitemap::create()
+            ->getSitemap();
 
         $pages = Page::select(['slug', 'updated_at'])->get();
 
@@ -24,6 +25,6 @@ class SiteMapController extends Controller
 
         $sitemap->writeToFile(public_path('/sitemap.xml'));
 
-        return 'site map aangemaakt';
+        return 'site map aangemaakt test';
     }
 }
