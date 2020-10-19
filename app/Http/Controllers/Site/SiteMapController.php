@@ -22,6 +22,8 @@ class SiteMapController extends Controller
                 ->setLastModificationDate($page->updated_at));
         }
 
+
+
 //        $sitemap->hasCrawled(function (Url $url) use ($pages) {
 //            // All pages will be crawled, except the contact page.
 //            // Links present on the contact page won't be added to the
@@ -31,6 +33,7 @@ class SiteMapController extends Controller
 //                    return;
 //                }
 //            }
+
 //            return $url;
 //        });
 
@@ -45,6 +48,7 @@ class SiteMapController extends Controller
 
         $sitemap->writeToFile(public_path('/sitemap.xml'));
 
-        return 'site map aangemaakt test';
+
+        return 'site map aangemaakt ga naar <a href="/sitemap.xml">/sitemap.xml</a>';
     }
 }
