@@ -14,9 +14,15 @@ class SiteMapController extends Controller
     {
         $pages = Page::select(['slug', 'updated_at'])->get();
 
-        $sitemap = SitemapGenerator::create(url('/'))
+        $sitemap = SitemapGenerator::create(url('/'));
 //            ->getSitemap(url('/'))
-            ->hasCrawled(function (Url $url) use ($pages) {
+
+        foreach ($pages as $page) {
+            $sitemap->add(Url::create($page->slug)
+                ->setLastModificationDate($page->updated_at));
+        }
+
+            $sitemap->hasCrawled(function (Url $url) use ($pages) {
                 // All pages will be crawled, except the contact page.
                 // Links present on the contact page won't be added to the
                 // sitemap unless they are present on a crawlable page.
@@ -36,10 +42,7 @@ class SiteMapController extends Controller
 //        }
 //    }
 
-        foreach ($pages as $page) {
-            $sitemap->add(Url::create($page->slug)
-                ->setLastModificationDate($page->updated_at));
-        }
+
 
         $sitemap->writeToFile(public_path('/sitemap.xml'));
 
