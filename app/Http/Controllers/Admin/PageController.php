@@ -79,6 +79,8 @@ class PageController extends Controller
             $array
         );
 
+        generateSitemap();
+
         return redirect()->back();
     }
 
@@ -141,6 +143,8 @@ class PageController extends Controller
             $array
         );
 
+        generateSitemap();
+
         return redirect()->route('admin.page.edit', $page->id);
     }
 
@@ -149,6 +153,8 @@ class PageController extends Controller
         $page = $this->pageInstance()->findOrFail($id);
 
         $page->delete();
+
+        generateSitemap();
 
         return redirect()->route('admin.page.index');
     }

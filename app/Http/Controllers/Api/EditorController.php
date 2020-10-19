@@ -51,6 +51,9 @@ class EditorController extends Controller
                 'in_menu' => isset($request->in_menu) ? 1 : 0,
             ]
         );
+
+        generateSitemap();
+
         return redirect()->back();
     }
 
@@ -113,6 +116,9 @@ class EditorController extends Controller
             ['slug' => $slug],
             $array
         );
+
+        generateSitemap();
+
         return redirect()->back();
     }
 
