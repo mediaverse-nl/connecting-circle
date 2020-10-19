@@ -27,6 +27,7 @@ class SiteMapController extends Controller
                         return;
                     }
                 }
+                return $url;
             });
 
 //        ->hasCrawled(function (Url $url) {
