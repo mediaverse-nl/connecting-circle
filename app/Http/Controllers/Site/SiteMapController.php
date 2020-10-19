@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Site;
 use App\Page;
 use App\Http\Controllers\Controller;
 
-use Spatie\Sitemap\SitemapGenerator;
+use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
 
 class SiteMapController extends Controller
@@ -14,7 +14,7 @@ class SiteMapController extends Controller
     {
         $pages = Page::select(['slug', 'updated_at'])->get();
 
-        $sitemap = SitemapGenerator::create(url('/'));
+        $sitemap = Sitemap::create(url('/'));
 //            ->getSitemap(url('/'))
 
         foreach ($pages as $page) {
