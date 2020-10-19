@@ -13,8 +13,8 @@ class SiteMapController extends Controller
 {
     public function __invoke()
     {
-        $sitemap = SitemapGenerator::create()
-            ->getSitemap();
+        $sitemap = SitemapGenerator::create(url('/'))
+            ->getSitemap(url());
 
         $pages = Page::select(['slug', 'updated_at'])->get();
 
