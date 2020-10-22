@@ -43,7 +43,7 @@ if (! function_exists('generateSitemap')) {
     function generateSitemap() {
         $pages = Page::select(['slug', 'updated_at'])->get();
 
-        $sitemap = Sitemap::create(url('/'));
+        $sitemap = Sitemap::create(str_replace('www.', '', url('/')));
 
         foreach ($pages as $page) {
             $sitemap->add(Url::create($page->slug)

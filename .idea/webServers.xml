@@ -2,12 +2,11 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="6faa870e-9e22-45c1-9552-f78325235eb6" name="connecting-circle.web-assembled" url="http://clock-on.nl">
-        <fileTransfer host="clock-on.nl" port="21" rootFolder="/domains/web-assembled.nl">
+      <webServer id="6faa870e-9e22-45c1-9552-f78325235eb6" name="connecting-circle.web-assembled" url="http://amlinvestments.nl">
+        <fileTransfer rootFolder="/domains" host="amlinvestments.nl" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" showHiddenFiles="true" />
           </advancedOptions>
-          <option name="port" value="21" />
         </fileTransfer>
       </webServer>
     </option>
