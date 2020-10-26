@@ -42,7 +42,7 @@ trait SeoTags
             $this->seo()->setTitle($page->meta_titel);
             $this->seo()->metatags()->addMeta('robots',($page->nofollow == 1 ? 'nofollow':'follow').','.($page->noindex == 1 ? 'noindex':'index'));
             $this->seo()->setDescription($page->meta_beschrijving);
-            $this->seo()->setCanonical(url('/'));
+            $this->seo()->setCanonical(url()->current());
             //opengraph
             $this->seo()->opengraph()->addImage(url('/').'/'.$page->meta_image_open_graph);
             $this->seo()->opengraph()->setUrl(url()->current());
