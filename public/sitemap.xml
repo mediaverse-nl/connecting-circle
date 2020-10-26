@@ -31,6 +31,12 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>http://localhost:8001/test</loc>
+        <lastmod>2020-10-19T13:55:00+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>http://localhost:8001/vacatures</loc>
         <lastmod>2020-09-11T12:36:27+00:00</lastmod>
         <changefreq>daily</changefreq>
