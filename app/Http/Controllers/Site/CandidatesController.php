@@ -55,11 +55,14 @@ class CandidatesController extends Controller
         $candidate->geboortedatum = Carbon::parse($request->geboortedatum);
         $candidate->save();
 
+        if (isset($request->upload_motivatiebrief)){
+            $uploadMoti = uploadImage($request, 'upload_motivatiebrief', 'storage/files/shares/candidate/'.$candidate->id.'/motivatiebrief', 'pdf');
+            $candidate->update(['upload_motivatiebrief' => $uploadMoti]);
+        }
+
         $uploadCv = uploadImage($request, 'upload_cv', 'storage/files/shares/candidate/'.$candidate->id.'/cv', 'pdf');
-        $uploadMoti = uploadImage($request, 'upload_motivatiebrief', 'storage/files/shares/candidate/'.$candidate->id.'/motivatiebrief', 'pdf');
 
         $candidate->update(['upload_cv' => $uploadCv]);
-        $candidate->update(['upload_motivatiebrief' => $uploadMoti]);
 
         session()->flash('successModel', 'success');
 

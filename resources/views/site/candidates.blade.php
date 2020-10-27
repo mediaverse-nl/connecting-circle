@@ -83,7 +83,7 @@
                     <hr>
                     <div class="form-row ">
                         <div class="col-md-6 col-sm-6 mb-4">
-                            <label for="">Upload motivatiebrief * (max 3mb)</label>
+                            <label for="">Upload motivatiebrief (max 3mb)</label>
                             <div class="input-group">
                                 <div class="custom-file">
                                     {!! Form::file('upload_motivatiebrief', ['class' => 'custom-file-input', 'accept="application/pdf"']) !!}

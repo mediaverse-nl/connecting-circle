@@ -42,7 +42,7 @@ class CandidateStoreRequest extends FormRequest
             'email' => 'required|email',
             'social_netwerkprofiel' => 'url',
             'geboortedatum' => 'required|date_format:d-m-Y',
-            'upload_motivatiebrief' => 'required|mimes:pdf|max:3000',
+            'upload_motivatiebrief' => 'nullable|mimes:pdf|max:3000',
             'upload_cv' => 'required|mimes:pdf|max:3000',
             'voorwaarden' => 'accepted',
             'referentienummer' => 'nullable|in:'.$jobs,
