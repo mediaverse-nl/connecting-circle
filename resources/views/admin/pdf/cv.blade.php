@@ -97,8 +97,8 @@
             <p class="pb-1">{!! \Carbon\Carbon::parse($data->geboortedatum)->format('d-m-Y')!!}</p>
             <b style="font-weight: bold; display: block;">Rijbewijs</b>
             <p class="pb-1">{!! $data->rijbewijs!!}</p>
-            <b style="font-weight: bold; display: block;">Social media</b>
-            <p class="pb-1">{!! $data->sociaal_networkprofiel!!}</p>
+{{--            <b style="font-weight: bold; display: block;">Social media</b>--}}
+{{--            <p class="pb-1">{!! $data->sociaal_networkprofiel!!}</p>--}}
 
             <p class="h5" style="margin-bottom: -5px;">Interesses</p>
             <hr class="break-white">
@@ -127,8 +127,9 @@
             <img src="{{getSetting('logo')}}" alt="">
              <hr class="break">
 
+            <h2 class="h3 mt-4">Inleiding</h2>
             <p class="py-3">{!! $data->inleiding !!}</p>
-            <h2 class="h2 mt-4">Opleidingen</h2>
+            <h2 class="h3 mt-4">Opleidingen</h2>
             <hr class="break">
             <table class="w-100" style="">
                 @foreach($data->educations as $edu)
@@ -148,7 +149,7 @@
                 @endforeach
             </table>
 
-            <h2 class="h2">Werkvervaring</h2>
+            <h2 class="h3">Werkvervaring</h2>
             <hr class="break">
             <table class="w-100" style="">
                 @foreach($data->experiences as $edu)
@@ -169,7 +170,7 @@
                 @endforeach
             </table>
 
-            <h2 class="h2">Vaardigheden</h2>
+            <h2 class="h3">Vaardigheden</h2>
             <hr class="break">
             <table class="w-100" style="margin-bottom: 25px;">
                 @foreach($data->skills as $skill)
@@ -184,7 +185,7 @@
                 @endforeach
             </table>
 
-            <h2 class="h2">Referenties</h2>
+            <h2 class="h3">Referenties</h2>
 
             <table class="w-100">
                 @foreach($data->references as $ref)
