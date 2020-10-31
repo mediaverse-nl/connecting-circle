@@ -62,7 +62,7 @@ class CandidateStoreRequest extends FormRequest
     public function messages()
     {
         return [
-            'geboortedatum.date_format' => 'Geboortedatum moet een geldig formaat bevatten ( 01-02-1990 )'
+            'geboortedatum.date_format' => 'Geboortedatum moet een geldig formaat bevatten ( 01-02-1990 / DD-MM-YYYY)'
         ];
     }
 }

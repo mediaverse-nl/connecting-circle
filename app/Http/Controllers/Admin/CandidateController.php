@@ -31,38 +31,6 @@ class CandidateController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -85,7 +53,9 @@ class CandidateController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-//            'status' => 'required'
+            'geboortedatum' => 'required|date_format:d-m-Y'
+        ],[
+            'geboortedatum.date_format' => 'Geboortedatum moet een geldig formaat bevatten ( 01-02-1990 / DD-MM-YYYY)'
         ]);
 
         $candidate = $this->candidates->findOrFail($id);
@@ -105,7 +75,10 @@ class CandidateController extends Controller
         $candidate->rijbewijs = $request->rijbewijs;
         $candidate->geboorteplaats = $request->geboorteplaats;
         $candidate->geslacht = $request->geslacht;
-        $candidate->geboortedatum = Carbon::parse($request->geboortedatum);
+        $candidate->data = json_encode([
+            'salarisindicatie' => $request->salarisindicatie
+        ]);
+        $candidate->geboortedatum = Carbon::parse($request->geboortedatum)->format('Y-m-d');
         $candidate->save();
 
         if (isset($request->profiel_foto)){

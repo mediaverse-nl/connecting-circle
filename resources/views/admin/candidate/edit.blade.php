@@ -95,7 +95,11 @@
                         {!! Form::text('plaats', null, ['class' => 'form-control'.(!$errors->has('plaats') ? '': ' is-invalid ')]) !!}
                         @include('components.error', ['field' => 'plaats'])
                     </div>
-                    <div class="form-group col-md-3"></div>
+                    <div class="form-group col-md-5">
+                        {!! Form::label('geboortedatum', null) !!}
+                        {!! Form::text('geboortedatum', \Carbon\Carbon::parse($candidate->geboortedatum)->format('d-m-Y'), ['class' => 'form-control'.(!$errors->has('geboortedatum') ? '': ' is-invalid ')]) !!}
+                        @include('components.error', ['field' => 'geboortedatum'])
+                    </div>
                     <div class="form-group col-md-6">
                         {!! Form::label('telefoon_prive', null) !!}
                         {!! Form::text('telefoon_prive', null, ['class' => 'form-control'.(!$errors->has('telefoon_prive') ? '': ' is-invalid ')]) !!}
@@ -115,6 +119,26 @@
                         {!! Form::label('sociaal_networkprofiel', null) !!}
                         {!! Form::text('sociaal_networkprofiel', null, ['class' => 'form-control'.(!$errors->has('sociaal_networkprofiel') ? '': ' is-invalid ')]) !!}
                         @include('components.error', ['field' => 'sociaal_networkprofiel'])
+                    </div>
+                    <div class="form-group col-md-6">
+                        {!! Form::label('rijbewijs', null) !!}
+                        {!! Form::text('rijbewijs', null, ['class' => 'form-control'.(!$errors->has('rijbewijs') ? '': ' is-invalid ')]) !!}
+                        @include('components.error', ['field' => 'rijbewijs'])
+                    </div>
+                    <div class="form-group col-md-6">
+                        {!! Form::label('rijbewijs_notities', null) !!}
+                        {!! Form::text('rijbewijs_notities', null, ['class' => 'form-control'.(!$errors->has('rijbewijs_notities') ? '': ' is-invalid ')]) !!}
+                        @include('components.error', ['field' => 'rijbewijs_notities'])
+                    </div>
+                    <div class="form-group col-md-6">
+                        {!! Form::label('rijbewijs', null) !!}
+                        {!! Form::text('rijbewijs', null, ['class' => 'form-control'.(!$errors->has('rijbewijs') ? '': ' is-invalid ')]) !!}
+                        @include('components.error', ['field' => 'rijbewijs'])
+                    </div>
+                    <div class="form-group col-md-6">
+                        {!! Form::label('salarisindicatie', null) !!}
+                        {!! Form::text('salarisindicatie', null, ['class' => 'form-control'.(!$errors->has('salarisindicatie') ? '': ' is-invalid ')]) !!}
+                        @include('components.error', ['field' => 'salarisindicatie'])
                     </div>
                 </div>
                 <div class="form-group">

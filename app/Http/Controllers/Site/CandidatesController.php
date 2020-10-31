@@ -37,8 +37,11 @@ class CandidatesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+//    public function store(Request $request)
     public function store(CandidateStoreRequest $request)
     {
+//        dd(Carbon::parse($request->geboortedatum));
+
         $candidate = new Candidate;
 
         $candidate->voorletters = $request->voorletters;

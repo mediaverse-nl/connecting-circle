@@ -19,7 +19,7 @@ class CreateExperiencesTable extends Migration
             $table->string('van')->nullable();
             $table->string('tot')->nullable();
             $table->string('bedrijf')->nullable();
-            $table->string('inleiding')->nullable();
+            $table->string('inleiding', 2000)->nullable();
             $table->timestamps();
 
             $table->unsignedBigInteger('candidate_id');

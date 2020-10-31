@@ -68,7 +68,7 @@ Route::namespace('Site')->name('site.')->group(function () {
 
 Route::namespace('Admin')->prefix('admin/')->middleware(['web', 'auth'])->name('admin.')->group(function () {
     Route::get('/candidate-cv-pdf-{id}', function ($id){
-        $data = \App\Candidate::findOrFail($id);
+        $data = \App\Candidate::find($id);
         $pdf = PDF::loadView('admin.pdf.cv', compact('data'));
         return $pdf->stream('admin.pdf.cv');
     })->name('candidate.cv') ;

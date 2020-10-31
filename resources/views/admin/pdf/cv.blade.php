@@ -88,13 +88,13 @@
             <b style="font-weight: bold; display: block;">Naam</b>
             <p class="pb-1">{!! $data->voornaam . ' ' . $data->achternaam!!}</p>
             <b style="font-weight: bold; display: block;">Adres</b>
-            <p class="pb-1">{!! $data->adres!!}, <br>  {!! $data->plaats!!} {!! $data->postcode!!}</p>
+            <p class="pb-1">{!! $data->adres!!}, <br>  {!! $data->postcode!!} {!! $data->plaats!!}</p>
             <b style="font-weight: bold; display: block;">Telefoonnummer</b>
             <p class="pb-1">{!! $data->telefoon_prive!!}</p>
             <b style="font-weight: bold; display: block;">E-mailadres</b>
             <p class="pb-1">{!! $data->email!!}</p>
             <b style="font-weight: bold; display: block;">Geboortedatum</b>
-            <p class="pb-1">{!! $data->geboortedatum!!}</p>
+            <p class="pb-1">{!! \Carbon\Carbon::parse($data->geboortedatum)->format('d-m-Y')!!}</p>
             <b style="font-weight: bold; display: block;">Rijbewijs</b>
             <p class="pb-1">{!! $data->rijbewijs!!}</p>
             <b style="font-weight: bold; display: block;">Social media</b>

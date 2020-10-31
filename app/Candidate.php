@@ -45,4 +45,9 @@ class Candidate extends Model implements Commentable
     {
         return $this->hasMany(Interests::class);
     }
+
+    public function data($attr)
+    {
+        return json_decode($this->data)[$attr];
+    }
 }
