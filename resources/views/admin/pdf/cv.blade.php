@@ -96,12 +96,12 @@
             <b style="font-weight: bold; display: block;">Geboortedatum</b>
             <p class="pb-1">{!! \Carbon\Carbon::parse($data->geboortedatum)->format('d-m-Y')!!}</p>
             <b style="font-weight: bold; display: block;">Rijbewijs</b>
-            <p class="pb-1">{!! $data->rijbewijs!!}</p>
+            <p class="pb-1">{!! $data->interests->isEmpty() ? '-' : $data->rijbewijs!!}</p>
 {{--            <b style="font-weight: bold; display: block;">Social media</b>--}}
 {{--            <p class="pb-1">{!! $data->sociaal_networkprofiel!!}</p>--}}
 
 
-            @if(!empty($data->interests))
+            @if($data->interests->isEmpty())
                 <p class="h5" style="margin-bottom: -5px;">Interesses</p>
                 <hr class="break-white">
                 @foreach( $data->interests as $inter)
@@ -132,7 +132,7 @@
 
             <h2 class="h3 mt-4">Inleiding</h2>
             <p class="py-3">{!! $data->inleiding !!}</p>
-            @if(!empty($data->educations))
+            @if($data->educations->isEmpty())
                 <h2 class="h3 mt-4">Opleidingen</h2>
                 <hr class="break">
                 <table class="w-100" style="">
@@ -154,7 +154,7 @@
                 </table>
             @endif
 
-            @if(!empty($data->experiences))
+            @if($data->experiences->isEmpty())
                 <h2 class="h3">Werkvervaring</h2>
                 <hr class="break">
                 <table class="w-100" style="">
@@ -177,7 +177,7 @@
                 </table>
             @endif
 
-            @if(!empty($data->skills))
+            @if($data->skills->isEmpty())
                 <h2 class="h3">Vaardigheden</h2>
                 <hr class="break">
                 <table class="w-100" style="margin-bottom: 25px;">
@@ -195,7 +195,7 @@
             @endif
 
             @if($data->references->isEmpty())
-                <h2 class="h3">Referenties {{$data->references->isEmpty()}}</h2>
+                <h2 class="h3">Referenties</h2>
                 <table class="w-100">
                     @foreach($data->references as $ref)
                         <tr style="padding-bottom: 25px;">
