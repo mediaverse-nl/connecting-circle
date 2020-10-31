@@ -195,7 +195,7 @@
             @endif
 
             @if(!empty($data->references))
-                <h2 class="h3">Referenties</h2>
+                <h2 class="h3">Referenties {{count($data->references)}}</h2>
                 <table class="w-100">
                     @foreach($data->references as $ref)
                         <tr style="padding-bottom: 25px;">
