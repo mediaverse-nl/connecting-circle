@@ -134,7 +134,7 @@
             <table class="w-100" style="">
                 @foreach($data->educations as $edu)
                     <tr>
-                        <td class="text-black-50 " style="font-weight: bold; display: block; width: 33%">
+                        <td class="text-black-50 " style="font-weight: bold; display: block; width: 70%">
                             <p style="font-weight: 900; font-size: 18px; display: inline-block">{!! $edu->schooling !!}</p>
                         </td>
                         <td class="text-black-50" style="display: block; text-align: right">
