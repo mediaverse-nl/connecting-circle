@@ -100,16 +100,20 @@
 {{--            <b style="font-weight: bold; display: block;">Social media</b>--}}
 {{--            <p class="pb-1">{!! $data->sociaal_networkprofiel!!}</p>--}}
 
-            <p class="h5" style="margin-bottom: -5px;">Interesses</p>
-            <hr class="break-white">
-            @foreach( $data->interests as $inter)
-                <table style="width: 100%;" class="text-white">
-                    <tr>
-                        <td style="text-align: left; font-weight: bold; display: block;">- {{$inter->interesse}}</td>
-                    </tr>
-                </table>
-            @endforeach
-            <br>
+
+            @if(isset($data->interests))
+                <p class="h5" style="margin-bottom: -5px;">Interesses</p>
+                <hr class="break-white">
+                @foreach( $data->interests as $inter)
+                    <table style="width: 100%;" class="text-white">
+                        <tr>
+                            <td style="text-align: left; font-weight: bold; display: block;">- {{$inter->interesse}}</td>
+                        </tr>
+                    </table>
+                @endforeach
+                <br>
+            @endif
+
             <p class="h5 pt-2" style="margin-bottom: -5px;">Talen</p>
             <hr class="break-white">
             <table style="width: 100%;" class="text-white">
@@ -121,7 +125,6 @@
                 @endforeach
             </table>
 
-
         </div>
         <div style="width: 66%; float: right;" class="p-3">
             <img src="{{getSetting('logo')}}" alt="">
@@ -129,82 +132,90 @@
 
             <h2 class="h3 mt-4">Inleiding</h2>
             <p class="py-3">{!! $data->inleiding !!}</p>
-            <h2 class="h3 mt-4">Opleidingen</h2>
-            <hr class="break">
-            <table class="w-100" style="">
-                @foreach($data->educations as $edu)
-                    <tr>
-                        <td class="text-black-50 " style="font-weight: bold; display: block; width: 70%">
-                            <p style="font-weight: 900; font-size: 18px; display: inline-block">{!! $edu->schooling !!}</p>
-                        </td>
-                        <td class="text-black-50" style="display: block; text-align: right">
-                            {!! $edu->van !!} - {!! $edu->tot !!}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" class="text-black-50" style="padding-bottom: 25px;">
-                            <i>{!! $edu->school_en_plaats !!}</i>
-                        </td>
-                    </tr>
-                @endforeach
-            </table>
+            @if(isset($data->educations))
+                <h2 class="h3 mt-4">Opleidingen</h2>
+                <hr class="break">
+                <table class="w-100" style="">
+                    @foreach($data->educations as $edu)
+                        <tr>
+                            <td class="text-black-50 " style="font-weight: bold; display: block; width: 70%">
+                                <p style="font-weight: 900; font-size: 18px; display: inline-block">{!! $edu->schooling !!}</p>
+                            </td>
+                            <td class="text-black-50" style="display: block; text-align: right">
+                                {!! $edu->van !!} - {!! $edu->tot !!}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="text-black-50" style="padding-bottom: 25px;">
+                                <i>{!! $edu->school_en_plaats !!}</i>
+                            </td>
+                        </tr>
+                    @endforeach
+                </table>
+            @endif
 
-            <h2 class="h3">Werkvervaring</h2>
-            <hr class="break">
-            <table class="w-100" style="">
-                @foreach($data->experiences as $edu)
-                    <tr>
-                        <td class="text-black-50 font-weight-bold" style="font-weight: bold; display: block; width: 70%">
-                            <p style="font-weight: 900; font-size: 18px; display: inline-block"> {!! $edu->functie !!}</p>
-                        </td>
-                        <td class="text-black-50" style="display: block; text-align: right">
-                            {!! $edu->van !!} - {!! $edu->tot !!}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" class="text-black-50" style="padding-bottom: 25px;">
-                            <i>{!! $edu->bedrijf !!}</i> <br>
-                            {!! $edu->inleiding !!}
-                        </td>
-                    </tr>
-                @endforeach
-            </table>
+            @if(isset($data->experiences))
+                <h2 class="h3">Werkvervaring</h2>
+                <hr class="break">
+                <table class="w-100" style="">
+                    @foreach($data->experiences as $edu)
+                        <tr>
+                            <td class="text-black-50 font-weight-bold" style="font-weight: bold; display: block; width: 70%">
+                                <p style="font-weight: 900; font-size: 18px; display: inline-block"> {!! $edu->functie !!}</p>
+                            </td>
+                            <td class="text-black-50" style="display: block; text-align: right">
+                                {!! $edu->van !!} - {!! $edu->tot !!}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="text-black-50" style="padding-bottom: 25px;">
+                                <i>{!! $edu->bedrijf !!}</i> <br>
+                                {!! $edu->inleiding !!}
+                            </td>
+                        </tr>
+                    @endforeach
+                </table>
+            @endif
 
-            <h2 class="h3">Vaardigheden</h2>
-            <hr class="break">
-            <table class="w-100" style="margin-bottom: 25px;">
-                @foreach($data->skills as $skill)
-                    <tr style="">
-                        <td class="text-black-50" style="font-weight: bold; display: block; width: 33%; padding:7px 0px;">
-                            {!! $skill->vaardigheid !!}
-                        </td>
-                        <td class="text-black-50" style="display: block; text-align: left">
-                            {!! $skill->ervaring !!}
-                        </td>
-                    </tr>
-                @endforeach
-            </table>
+            @if(isset($data->skills))
+                <h2 class="h3">Vaardigheden</h2>
+                <hr class="break">
+                <table class="w-100" style="margin-bottom: 25px;">
+                    @foreach($data->skills as $skill)
+                        <tr style="">
+                            <td class="text-black-50" style="font-weight: bold; display: block; width: 50%; padding:7px 0px;">
+                                {!! $skill->vaardigheid !!}
+                            </td>
+                            <td class="text-black-50" style="display: block; text-align: left">
+                                {!! $skill->ervaring !!}
+                            </td>
+                        </tr>
+                    @endforeach
+                </table>
+            @endif
 
-            <h2 class="h3">Referenties</h2>
+            @if(isset($data->references))
+                <h2 class="h3">Referenties</h2>
+                <table class="w-100">
+                    @foreach($data->references as $ref)
+                        <tr style="padding-bottom: 25px;">
+                            <td class="text-black-50 font-weight-bold" style="font-weight: bold; display: block; width: 33%">
+                                {!! $ref->contactpersoon !!}
+                            </td>
+                            <td class="text-black-50" style="display: block; text-align: right">
+                                {!! $ref->bedrijf !!}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="text-black-50" style="padding-bottom: 25px;">
+                                <i>{!! $ref->telefoonnummer !!}</i> <br>
+                                <i>{!! $ref->email !!}</i>
+                            </td>
+                        </tr>
+                    @endforeach
+                </table>
+            @endif
 
-            <table class="w-100">
-                @foreach($data->references as $ref)
-                    <tr style="padding-bottom: 25px;">
-                        <td class="text-black-50 font-weight-bold" style="font-weight: bold; display: block; width: 33%">
-                            {!! $ref->contactpersoon !!}
-                        </td>
-                        <td class="text-black-50" style="display: block; text-align: right">
-                            {!! $ref->bedrijf !!}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" class="text-black-50" style="padding-bottom: 25px;">
-                            <i>{!! $ref->telefoonnummer !!}</i> <br>
-                            <i>{!! $ref->email !!}</i>
-                        </td>
-                    </tr>
-                @endforeach
-            </table>
         </div>
     </div>
 </body>
