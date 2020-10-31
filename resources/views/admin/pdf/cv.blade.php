@@ -101,7 +101,7 @@
 {{--            <p class="pb-1">{!! $data->sociaal_networkprofiel!!}</p>--}}
 
 
-            @if($data->interests->isEmpty())
+            @if(!$data->interests->isEmpty())
                 <p class="h5" style="margin-bottom: -5px;">Interesses</p>
                 <hr class="break-white">
                 @foreach( $data->interests as $inter)
@@ -132,7 +132,7 @@
 
             <h2 class="h3 mt-4">Inleiding</h2>
             <p class="py-3">{!! $data->inleiding !!}</p>
-            @if($data->educations->isEmpty())
+            @if(!$data->educations->isEmpty())
                 <h2 class="h3 mt-4">Opleidingen</h2>
                 <hr class="break">
                 <table class="w-100" style="">
@@ -154,7 +154,7 @@
                 </table>
             @endif
 
-            @if($data->experiences->isEmpty())
+            @if(!$data->experiences->isEmpty())
                 <h2 class="h3">Werkvervaring</h2>
                 <hr class="break">
                 <table class="w-100" style="">
@@ -177,7 +177,7 @@
                 </table>
             @endif
 
-            @if($data->skills->isEmpty())
+            @if(!$data->skills->isEmpty())
                 <h2 class="h3">Vaardigheden</h2>
                 <hr class="break">
                 <table class="w-100" style="margin-bottom: 25px;">
@@ -194,7 +194,7 @@
                 </table>
             @endif
 
-            @if($data->references->isEmpty())
+            @if(!$data->references->isEmpty())
                 <h2 class="h3">Referenties</h2>
                 <table class="w-100">
                     @foreach($data->references as $ref)
