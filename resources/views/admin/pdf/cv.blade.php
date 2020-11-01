@@ -122,6 +122,7 @@
                         <td style="text-align: left; font-weight: bold; display: block;">{{$lang->taal}}</td>
                         <td style="text-align: right">{{$lang->ervaring}}</td>
                     </tr>
+
                 @endforeach
             </table>
 
