@@ -139,19 +139,37 @@ class CandidateController extends Controller
                 foreach ($arrayInput as $input) {
                     $inputArr = array_merge($inputArr, [$input =>$value[$input]]);
                 }
-                $arr[] = array_merge($inputArr, [
-                    'candidate_id' => $candidate->id,
-                ]);
+
+                if (array_filter($inputArr)){
+                    $arr[] = array_merge($inputArr, [
+                        'candidate_id' => $candidate->id,
+                    ]);
+                }
+
             }
+
             $model->insert($arr);
 
-            foreach ($model->{$deleteModelName} as $item){
-                if (!array_filter($arrayInput)) {
-                    dd(1);
-                    $item->delete();
-                }
-            }
+//            if ($deleteModelName == 'references'){
+//                foreach ($arr as $collection){
+//                    unset($collection['candidate_id']);
+//                    if (array_filter($collection)){
+////                        dd($collection);
+//                    }
+//
+//                }
+//            }
 
+
+//            if (array_filter($arr)) {
+//                dd($candidate->{$deleteModelName});
+//                foreach ($candidate->{$deleteModelName} as $item){
+//                    if (!array_filter($arrayInput)) {
+//                        dd(1);
+//                        $item->delete();
+//                    }
+//                }
+//            }
         }
     }
 
