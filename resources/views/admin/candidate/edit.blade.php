@@ -130,11 +130,11 @@
                         {!! Form::text('rijbewijs_notities', null, ['class' => 'form-control'.(!$errors->has('rijbewijs_notities') ? '': ' is-invalid ')]) !!}
                         @include('components.error', ['field' => 'rijbewijs_notities'])
                     </div>
-                    <div class="form-group col-md-6">
-                        {!! Form::label('rijbewijs', null) !!}
-                        {!! Form::text('rijbewijs', null, ['class' => 'form-control'.(!$errors->has('rijbewijs') ? '': ' is-invalid ')]) !!}
-                        @include('components.error', ['field' => 'rijbewijs'])
-                    </div>
+{{--                    <div class="form-group col-md-6">--}}
+{{--                        {!! Form::label('rijbewijs', null) !!}--}}
+{{--                        {!! Form::text('rijbewijs', null, ['class' => 'form-control'.(!$errors->has('rijbewijs') ? '': ' is-invalid ')]) !!}--}}
+{{--                        @include('components.error', ['field' => 'rijbewijs'])--}}
+{{--                    </div>--}}
                     <div class="form-group col-md-6">
                         {!! Form::label('salarisindicatie', null) !!}
                         {!! Form::text('salarisindicatie', null, ['class' => 'form-control'.(!$errors->has('salarisindicatie') ? '': ' is-invalid ')]) !!}

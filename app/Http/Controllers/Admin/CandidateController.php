@@ -76,7 +76,8 @@ class CandidateController extends Controller
         $candidate->geboorteplaats = $request->geboorteplaats;
         $candidate->geslacht = $request->geslacht;
         $candidate->data = json_encode([
-            'salarisindicatie' => $request->salarisindicatie
+            'salarisindicatie' => $request->salarisindicatie,
+            'rijbewijs_notities' => $request->rijbewijs_notities,
         ]);
         $candidate->geboortedatum = Carbon::parse($request->geboortedatum)->format('Y-m-d');
         $candidate->save();
@@ -149,27 +150,6 @@ class CandidateController extends Controller
             }
 
             $model->insert($arr);
-
-//            if ($deleteModelName == 'references'){
-//                foreach ($arr as $collection){
-//                    unset($collection['candidate_id']);
-//                    if (array_filter($collection)){
-////                        dd($collection);
-//                    }
-//
-//                }
-//            }
-
-
-//            if (array_filter($arr)) {
-//                dd($candidate->{$deleteModelName});
-//                foreach ($candidate->{$deleteModelName} as $item){
-//                    if (!array_filter($arrayInput)) {
-//                        dd(1);
-//                        $item->delete();
-//                    }
-//                }
-//            }
         }
     }
 

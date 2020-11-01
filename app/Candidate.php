@@ -46,8 +46,23 @@ class Candidate extends Model implements Commentable
         return $this->hasMany(Interests::class);
     }
 
-    public function data($attr)
+    public function getRijbewijsNotitiesAttribute()
     {
-        return json_decode($this->data)[$attr];
+        $data = json_decode($this->data, true);
+        $flipData = array_flip($data);
+        if (in_array('rijbewijs_notities', $flipData)){
+            return $data['rijbewijs_notities'];
+        }
+        return null;
     }
+
+    public function getSalarisindicatieAttribute()
+    {
+        $data = json_decode($this->data, true);
+        $flipData = array_flip($data);
+        if (in_array('salarisindicatie', $flipData)){
+            return $data['salarisindicatie'];
+        }
+        return null;
+     }
 }
