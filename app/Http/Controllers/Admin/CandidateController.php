@@ -144,6 +144,14 @@ class CandidateController extends Controller
                 ]);
             }
             $model->insert($arr);
+
+            foreach ($model->{$deleteModelName} as $item){
+                if (!array_filter($arrayInput)) {
+                    dd(1);
+                    $item->delete();
+                }
+            }
+
         }
     }
 

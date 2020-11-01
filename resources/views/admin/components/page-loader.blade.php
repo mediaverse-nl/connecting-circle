@@ -15,11 +15,11 @@
     </style>
 @endpush
 
-@push('scripts')
-    <script>
-        $(window).on('load', function(){
-            // Animate loader off screen
-            $(".se-pre-con").fadeOut('fast');
-        });
-    </script>
-@endpush
+{{--@push('scripts')--}}
+{{--    <script>--}}
+{{--        $(window).on('load', function(){--}}
+{{--            // Animate loader off screen--}}
+{{--            $(".se-pre-con").fadeOut('fast');--}}
+{{--        });--}}
+{{--    </script>--}}
+{{--@endpush--}}
