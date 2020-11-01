@@ -96,7 +96,7 @@
             <b style="font-weight: bold; display: block;">Geboortedatum</b>
             <p class="pb-1">{!! \Carbon\Carbon::parse($data->geboortedatum)->format('d-m-Y')!!}</p>
             <b style="font-weight: bold; display: block;">Rijbewijs</b>
-            <p class="pb-1">{!! $data->rijbewijs ? '-' : $data->rijbewijs!!}</p>
+            <p class="pb-1">{!! $data->rijbewijs ?? '-'!!}</p>
 {{--            <b style="font-weight: bold; display: block;">Social media</b>--}}
 {{--            <p class="pb-1">{!! $data->sociaal_networkprofiel!!}</p>--}}
 
