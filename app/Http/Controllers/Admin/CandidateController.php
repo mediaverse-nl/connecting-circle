@@ -138,15 +138,15 @@ class CandidateController extends Controller
             foreach ($request as $value){
                 $inputArr = [];
                 foreach ($arrayInput as $input) {
-                    $inputArr = array_merge($inputArr, [$input =>$value[$input]]);
+                    if (array_key_exists($input,$value)){
+                        $inputArr = array_merge($inputArr, [$input => $value[$input]]);
+                    }
                 }
-
                 if (array_filter($inputArr)){
                     $arr[] = array_merge($inputArr, [
                         'candidate_id' => $candidate->id,
                     ]);
                 }
-
             }
 
             $model->insert($arr);

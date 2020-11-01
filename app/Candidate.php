@@ -48,20 +48,25 @@ class Candidate extends Model implements Commentable
 
     public function getRijbewijsNotitiesAttribute()
     {
-        $data = json_decode($this->data, true);
-        $flipData = array_flip($data);
-        if (in_array('rijbewijs_notities', $flipData)){
-            return $data['rijbewijs_notities'];
+//        dd($this->data);
+        if (!empty($this->data)){
+            $data = json_decode($this->data, true);
+//            dd();
+//            $flipData = array_flip($data);
+            if (array_key_exists('rijbewijs_notities', $data)){
+                return $data['rijbewijs_notities'];
+            }
         }
         return null;
     }
 
     public function getSalarisindicatieAttribute()
     {
-        $data = json_decode($this->data, true);
-        $flipData = array_flip($data);
-        if (in_array('salarisindicatie', $flipData)){
-            return $data['salarisindicatie'];
+        if (!empty($this->data)){
+            $data = json_decode($this->data, true);
+            if (array_key_exists('salarisindicatie', $data)){
+                return $data['salarisindicatie'];
+            }
         }
         return null;
      }
