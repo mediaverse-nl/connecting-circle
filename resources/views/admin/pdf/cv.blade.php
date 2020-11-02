@@ -132,7 +132,7 @@
              <hr class="break">
 
             <h2 class="h3 mt-4">Inleiding</h2>
-            <p class="py-3">{!! $data->inleiding !!}</p>
+            <p class="py-3">{!! htmlspecialchars_decode($data->inleiding) !!}</p>
             @if(!$data->educations->isEmpty())
                 <h2 class="h3 mt-4">Opleidingen</h2>
                 <hr class="break">
