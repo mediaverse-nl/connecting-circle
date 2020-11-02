@@ -88,7 +88,7 @@
             <h3 class="h5" style="margin-bottom: -5px;">Personalia</h3>
             <hr class="break-white">
             <b style="font-weight: bold; display: block;">Naam</b>
-            <p class="pb-1">{!! $data->voornaam !!} {!! $candidate->voorvoegsel !!} {!! $candidate->achternaam !!}</p>
+            <p class="pb-1">{!! $data->voornaam !!} {!! $data->voorvoegsel !!} {!! $data->achternaam !!}</p>
             <b style="font-weight: bold; display: block;">Adres</b>
             <p class="pb-1">{!! $data->adres!!}, <br>  {!! $data->postcode!!} {!! $data->plaats!!}</p>
             <b style="font-weight: bold; display: block;">Telefoonnummer</b>
