@@ -21,7 +21,7 @@
             size: 21cm 29.7cm;
             margin: 0;
             background: rgb(52,58,64);
-            background: linear-gradient(90deg, rgba(52,58,64,1) 30%, rgba(238,238,238,1) 30%, rgba(238,238,238,1) 100%);
+            background: linear-gradient(to right, rgba(52,58,64,1) 30%, rgba(238,238,238,1) 30%, rgba(238,238,238,1) 100%);
             /*background-image:*/
             /*    linear-gradient(*/
             /*        to right,*/
