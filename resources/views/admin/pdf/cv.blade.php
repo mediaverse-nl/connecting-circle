@@ -131,10 +131,10 @@
             <img src="{{getSetting('logo')}}" alt="">
              <hr class="break">
 
-            <h2 class="h3 mt-4">Inleiding</h2>
+            <h2 class="h4 mt-4">Inleiding</h2>
             <p class="py-3">{!! nl2br($data->inleiding) !!}</p>
             @if(!$data->educations->isEmpty())
-                <h2 class="h3 mt-4">Opleidingen</h2>
+                <h2 class="h4 mt-4">Opleidingen</h2>
                 <hr class="break">
                 <table class="w-100" style="">
                     @foreach($data->educations as $edu)
@@ -156,7 +156,7 @@
             @endif
 
             @if(!$data->experiences->isEmpty())
-                <h2 class="h3">Werkvervaring</h2>
+                <h2 class="h4">Werkvervaring</h2>
                 <hr class="break">
                 <table class="w-100" style="">
                     @foreach($data->experiences as $edu)
@@ -171,7 +171,7 @@
                         <tr>
                             <td colspan="2" class="text-black-50" style="padding-bottom: 25px;">
                                 <i>{!! $edu->bedrijf !!}</i> <br>
-                                {!! $edu->inleiding !!}
+                                {!! nl2br($edu->inleiding) !!}
                             </td>
                         </tr>
                     @endforeach
@@ -179,13 +179,13 @@
             @endif
 
             @if(!$data->skills->isEmpty())
-                <h2 class="h3">Vaardigheden</h2>
+                <h2 class="h4">Vaardigheden</h2>
                 <hr class="break">
                 <table class="w-100" style="margin-bottom: 25px;">
                     @foreach($data->skills as $skill)
                         <tr style="">
                             <td class="text-black-50" style="font-weight: bold; display: block; width: 50%; padding:7px 0px;">
-                                {!! $skill->vaardigheid !!}
+                                {!! nl2br($skill->vaardigheid) !!}
                             </td>
                             <td class="text-black-50" style="display: block; text-align: left">
                                 {!! $skill->ervaring !!}
@@ -196,7 +196,7 @@
             @endif
 
             @if(!$data->references->isEmpty())
-                <h2 class="h3">Referenties</h2>
+                <h2 class="h4">Referenties</h2>
                 <table class="w-100">
                     @foreach($data->references as $ref)
                         <tr style="padding-bottom: 25px;">
