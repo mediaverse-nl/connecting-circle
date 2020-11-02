@@ -42,7 +42,7 @@
                            'btnIcon' => 'fa fa-trash'
                         ])
                             @slot('description')
-                                U gaat <b>"{!! $candidate->voornaam !!} {!! $candidate->achternaam !!}"</b> verwijderen druk op verder
+                                U gaat <b>"{!! $candidate->voornaam !!} {!! $candidate->voorvoegsel !!} {!! $candidate->achternaam !!}"</b> verwijderen druk op verder
                             @endslot
                         @endcomponent
                         <a href="{{route('admin.candidate.edit', $candidate->id)}}" class="rounded-circle edit">
