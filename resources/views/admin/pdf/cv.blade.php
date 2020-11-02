@@ -20,14 +20,16 @@
         @page {
             size: 21cm 29.7cm;
             margin: 0;
-            background-image:
-                linear-gradient(
-                    to right,
-                    #eee,
-                    #eee 30%,
-                    #eee 70%,
-                    #343a40 70%
-                );
+            background: linear-gradient(90deg, rgba(52,58,64,1) 30%, rgba(238,238,238,1) 30%, rgba(238,238,238,1) 100%);
+
+            /*background-image:*/
+            /*    linear-gradient(*/
+            /*        to right,*/
+            /*        #eee,*/
+            /*        #eee 30%,*/
+            /*        #eee 70%,*/
+            /*        #343a40 70%*/
+            /*    );*/
         }
 
         b{
