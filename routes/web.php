@@ -70,7 +70,7 @@ Route::namespace('Admin')->prefix('admin/')->middleware(['web', 'auth'])->name('
     Route::get('/candidate-cv-pdf-{id}', function ($id){
         $data = \App\Candidate::find($id);
         $pdf = PDF::loadView('admin.pdf.cv', compact('data'));
-        return $pdf->stream('admin.pdf.cv');
+        return $pdf->stream('kandidaat-'.$data->id.'.pdf');
     })->name('candidate.cv') ;
     Route::get('/dashboard', 'DashboardController')->name('dashboard');
     Route::get('file-manager', 'FileManagerController@index')->name('file-manager.index');
