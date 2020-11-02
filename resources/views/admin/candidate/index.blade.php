@@ -17,7 +17,7 @@
         @slot('head')
             <th>id</th>
             <th>Naam</th>
-            <th>voorgedragen</th>
+{{--            <th>voorgedragen</th>--}}
             <th>status</th>
             <th>aanmelding</th>
             <th>laatste wijziging</th>
@@ -27,9 +27,9 @@
             @foreach($candidates as $candidate)
                 <tr class="">
                     <td>{!! $candidate->id !!}</td>
-                    <td>{!! $candidate->voornaam !!} {!! $candidate->achternaam !!}</td>
-                    <td></td>
-                    <td></td>
+                    <td>{!! $candidate->voorvoegsel !!} {!! $candidate->voornaam !!} {!! $candidate->achternaam !!}</td>
+{{--                    <td></td>--}}
+                    <td>{!! $candidate->status !!}</td>
                     <td>{!! $candidate->created_at !!}</td>
                     <td>{!! $candidate->updated_at !!}</td>
                     <td>
