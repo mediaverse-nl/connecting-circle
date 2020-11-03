@@ -178,7 +178,7 @@
 
                 @include('admin.components.notices', ['model' => $candidate])
 
-{{--                <iframe src="{!! route('unisharp.lfm.show') !!}?defaultPath=/shares/candidate/{!! $candidate->id !!}" style="width: 100%; height: 80vh; overflow: hidden; border: none;"></iframe>--}}
+                <iframe src="{!! route('unisharp.lfm.show') !!}?defaultPath=/shares/candidate/{!! $candidate->id !!}" style="width: 100%; height: 80vh; overflow: hidden; border: none;"></iframe>
 
             </div>
             <div class="col-md-6">
