@@ -136,7 +136,7 @@
             <h2 class="h4 mt-4">Inleiding</h2>
             <p class="py-3">{!! nl2br($data->inleiding) !!}</p>
             @if(!$data->educations->isEmpty())
-                <h2 class="h4 mt-4">Opleidingen</h2>
+                <h2 class="h5 mt-3">Opleidingen</h2>
                 <hr class="break">
                 <table class="w-100" style="">
                     @foreach($data->educations as $edu)
@@ -158,7 +158,7 @@
             @endif
 
             @if(!$data->experiences->isEmpty())
-                <h2 class="h4">Werkvervaring</h2>
+                <h2 class="h5 mt-3">Werkvervaring</h2>
                 <hr class="break">
                 <table class="w-100" style="">
                     @foreach($data->experiences as $edu)
@@ -181,7 +181,7 @@
             @endif
 
             @if(!$data->skills->isEmpty())
-                <h2 class="h4">Vaardigheden</h2>
+                <h2 class="h5 mt-3">Vaardigheden</h2>
                 <hr class="break">
                 <table class="w-100" style="margin-bottom: 25px;">
                     @foreach($data->skills as $skill)
