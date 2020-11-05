@@ -133,7 +133,7 @@
             <img src="{{getSetting('logo')}}" alt="">
              <hr class="break">
 
-            <h2 class="h4 mt-4">Inleiding</h2>
+            <h2 class="h5 mt-4">Inleiding</h2>
             <p class="py-3">{!! nl2br($data->inleiding) !!}</p>
             @if(!$data->educations->isEmpty())
                 <h2 class="h5 mt-3">Opleidingen</h2>
@@ -142,7 +142,7 @@
                     @foreach($data->educations as $edu)
                         <tr>
                             <td class="text-black-50 " style="font-weight: bold; display: block; width: 70%">
-                                <p style="font-weight: 900; font-size: 18px; display: inline-block">{!! $edu->schooling !!}</p>
+                                <p style="font-weight: 900; font-size: 15px; display: inline-block">{!! $edu->schooling !!}</p>
                             </td>
                             <td class="text-black-50" style="display: block; text-align: right">
                                 {!! $edu->van !!} - {!! $edu->tot !!}
@@ -158,7 +158,7 @@
             @endif
 
             @if(!$data->experiences->isEmpty())
-                <h2 class="h5 mt-3">werkervaring</h2>
+                <h2 class="h5 mt-3">Werkervaring</h2>
                 <hr class="break">
                 <table class="w-100" style="">
                     @foreach($data->experiences as $edu)
