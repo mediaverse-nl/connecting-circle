@@ -158,7 +158,7 @@
             @endif
 
             @if(!$data->experiences->isEmpty())
-                <h2 class="h5 mt-3">Werkvervaring</h2>
+                <h2 class="h5 mt-3">werkervaring</h2>
                 <hr class="break">
                 <table class="w-100" style="">
                     @foreach($data->experiences as $edu)
