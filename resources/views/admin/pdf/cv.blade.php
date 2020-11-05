@@ -186,7 +186,7 @@
                 <table class="w-100" style="margin-bottom: 25px;">
                     @foreach($data->skills as $skill)
                         <tr style="">
-                            <td class="text-black-50" style="font-weight: bold; display: block; width: 70%; padding:7px 0px;">
+                            <td class="text-black-50" style="font-weight: 500; display: block; width: 70%; padding:7px 0px;">
                                 {!! nl2br($skill->vaardigheid) !!}
                             </td>
                             <td class="text-black-50" style="display: block; text-align: right">
