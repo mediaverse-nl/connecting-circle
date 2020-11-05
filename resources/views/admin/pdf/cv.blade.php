@@ -189,7 +189,7 @@
                             <td class="text-black-50" style="font-weight: 500; display: block; width: 70%; padding:7px 0px;">
                                 {!! nl2br($skill->vaardigheid) !!}
                             </td>
-                            <td class="text-black-50" style="display: block; text-align: right">
+                            <td class="text-black-50" style="font-weight: bold;display: block; text-align: right">
                                 {!! $skill->ervaring !!}
                             </td>
                         </tr>
