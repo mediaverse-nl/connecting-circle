@@ -109,7 +109,8 @@
                 @foreach( $data->interests as $inter)
                     <table style="width: 100%;" class="text-white">
                         <tr>
-                            <td style="text-align: left; font-weight: bold; display: block;">- {{$inter->interesse}}</td>
+                            <td style="text-align: left; font-weight: bold; display: block; width: 5px;">- </td>
+                            <td style="text-align: left; font-weight: bold; display: block;">{{$inter->interesse}}</td>
                         </tr>
                     </table>
                 @endforeach
