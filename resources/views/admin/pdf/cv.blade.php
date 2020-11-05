@@ -164,7 +164,7 @@
                     @foreach($data->experiences as $edu)
                         <tr>
                             <td class="text-black-50 font-weight-bold" style="font-weight: bold; display: block; width: 70%">
-                                <p style="font-weight: 900; font-size: 18px; display: inline-block"> {!! $edu->functie !!}</p>
+                                <p style="font-weight: 900; font-size: 15px; display: inline-block"> {!! $edu->functie !!}</p>
                             </td>
                             <td class="text-black-50" style="display: block; text-align: right">
                                 {!! $edu->van !!} - {!! $edu->tot !!}
